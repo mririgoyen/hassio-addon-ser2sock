@@ -1,8 +1,9 @@
 {
   "name": "ser2sock",
-  "version": "0.0.16",
+  "version": "0.1.0",
   "slug": "ser2sock",
-  "description": "ser2sock - https://github.com/nutechsoftware/ser2sock",
+  "description": "Implementation of ser2sock for Home Assistant.",
+  "url": "https://github.com/goyney/hassio-addon-ser2sock",
   "startup": "services",
   "boot": "auto",
   "host_network": true,
