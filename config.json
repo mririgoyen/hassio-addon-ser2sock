@@ -1,0 +1,20 @@
+{
+  "name": "ser2sock",
+  "version": "0.0.16",
+  "slug": "ser2sock",
+  "description": "ser2sock - https://github.com/nutechsoftware/ser2sock",
+  "startup": "services",
+  "boot": "auto",
+  "host_network": true,
+  "devices": [
+    "/dev/ttyAMA0:/dev/ttyAMA0:rwm"
+  ],
+  "options": {
+    "baudRate": 115200,
+    "serialDevice": "/dev/ttyAMA0"
+  },
+  "schema": {
+    "baudRate": "int",
+    "serialDevice": "str"
+  }
+}
