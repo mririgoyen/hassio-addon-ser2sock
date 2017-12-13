@@ -1,15 +1,13 @@
 {
   "name": "ser2sock",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "slug": "ser2sock",
   "description": "Implementation of ser2sock for Home Assistant.",
   "url": "https://github.com/goyney/hassio-addon-ser2sock",
   "startup": "services",
   "boot": "auto",
   "host_network": true,
-  "devices": [
-    "/dev/ttyAMA0:/dev/ttyAMA0:rwm"
-  ],
+  "auto_uart": true,
   "options": {
     "baudRate": 115200,
     "serialDevice": "/dev/ttyAMA0"
