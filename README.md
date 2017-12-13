@@ -1,21 +1,34 @@
 ## Hass.io Add-on: ser2sock
 
-This add-on allows you to create a socket interface for your serial device for use in Home Assistant.
+This add-on allows you to create a socket interface for your serial device for use in Home Assistant. This is extremely useful in combination with the [Alarm Decoder component](https://home-assistant.io/components/alarmdecoder/).
 
-### About
-This add-on, in it's current state, requires a little bit of extra configuration to utilize and cannot be installed via the Hass.io Community Repositories yet.
+## Configuration
 
-### Installation
-1. Clone this repo into your `addons` folder.
-2. Modify `config.json` to expose your serial device. By default, `/dev/ttyAMA0` is exposed.
-3. Set the `baudRate` and `serialDevice` path to the exposed serial device in the `options` object.
-4. By default, the socket interface will be exposed on port `8100`. If you would like to change that, update the line in the `Dockerfile` that says `EXPOSE 8100`.
-5. Go into Hass.io section of Home Assistant and click the add-on repositories icon in the top right corner. Then click the refresh icon. ser2sock should appear in the list.
-6. Install ser2sock.
-7. If everything was configured correctly, your socket interface should be available.
+Default configuration:
+
+```
+{
+  "serialDevice": "/dev/ttyAMA0",
+  "baudRate": 115200,
+  "port": 8100
+}
+```
+
+### Option: `serialDevice`
+The `serialDevice` option is the path to the serial device you want to create a socket for.
+
+### Option: `baudRate`
+The `baudRate` option is the baud rate in which your serial device operates on.
+
+### Option: `port`
+The `port` option is the port you would like the serial device to be listening at. Remember, if you change the port, be sure it is not already in use!
+
+### Known issues and limitations
+* You may only create a socket interface for one serial device.
+* If ser2sock has previously been running, Hass may stop communicating with the socket if ser2sock is updated or restarted. Restarting Hass resolves this problem.
 
 ### Technical Details
 This add-on builds a local copy of [ser2sock](https://github.com/nutechsoftware/ser2sock).
 
 ### License
-MIT
+[MIT](LICENSE)

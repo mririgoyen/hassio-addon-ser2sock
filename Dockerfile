@@ -18,8 +18,6 @@ RUN \
   cd .. && \
   rm -rf ser2sock
 
-EXPOSE 8100
-
 # Copy run script
 COPY run.sh /
 RUN chmod a+x /run.sh
