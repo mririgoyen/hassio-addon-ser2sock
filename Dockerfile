@@ -20,6 +20,7 @@ RUN \
 
 # Copy run script
 COPY run.sh /
+COPY ser2sock.conf /
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]

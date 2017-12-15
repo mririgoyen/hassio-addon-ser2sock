@@ -23,6 +23,9 @@ The `baudRate` option is the baud rate in which your serial device operates on.
 ### Option: `port`
 The `port` option is the port you would like the serial device to be listening at. Remember, if you change the port, be sure it is not already in use!
 
+## Home Assistant Configuration
+ser2sock comes up on `local-samba`. When configuring a ser2sock device in Home Assistant, you will use that as your `host`.
+
 ### Known issues and limitations
 * You may only create a socket interface for one serial device.
 * If ser2sock has previously been running, Hass may stop communicating with the socket if ser2sock is updated or restarted. Restarting Hass resolves this problem.
