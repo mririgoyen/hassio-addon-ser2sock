@@ -26,12 +26,12 @@ The `port` option is the port you would like the serial device to be listening a
 ## Home Assistant Configuration
 ser2sock comes up on `local-samba`. When configuring a ser2sock device in Home Assistant, you will use that as your `host`.
 
-### Known issues and limitations
+## Known issues and limitations
 * You may only create a socket interface for one serial device.
 * If ser2sock has previously been running, Hass may stop communicating with the socket if ser2sock is updated or restarted. Restarting Hass resolves this problem.
 
-### Technical Details
+## Technical Details
 This add-on builds a local copy of [ser2sock](https://github.com/nutechsoftware/ser2sock).
 
-### License
+## License
 [MIT](LICENSE)
