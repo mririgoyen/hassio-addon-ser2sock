@@ -3,11 +3,9 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-# Install dependencies
-RUN apk add --no-cache build-base git libressl-dev jq
-
-# Install the ser2sock application
+# Build and install the ser2sock application
 RUN \
+  apk add --no-cache build-base git libressl-dev jq && \
   cd /tmp && \
   git clone https://github.com/nutechsoftware/ser2sock.git && \
   cd ser2sock && \
@@ -20,7 +18,8 @@ RUN \
 
 # Copy run script
 COPY run.sh /
-COPY ser2sock.conf /
+COPY ser2sock.conf /etc/
+
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
